@@ -79,20 +79,31 @@ public class Money {
     }
 
     public static void main(String[] args) {
-        long x = 13, d = 13;
-        byte z = 5, v = 5;
+        long x = 13, d = 3;
+        byte z = 5, v = 50;
 
         Money obj = new Money(x, z);
         Money obj1 = new Money(d, v);
-        Money obj2 = obj.sub(obj1);
-        double o = obj.div(obj2);
-
-        System.out.println(obj.toString() + " " + obj2.toString());
-        System.out.println(o);
-        System.out.println(obj.toCoin() + " " + obj2.toCoin());
-        System.out.println(obj.divn(1305));
-        obj.comp(obj2);
-        System.out.println(obj.equals(obj1));
+        Money obj2 = obj;
+        
+        System.out.println(obj.toString() + " " + obj1.toString());
+        
+        System.out.println("Додавання грошей:");
+        System.out.println(obj.add(obj1));
+        
+        System.out.println("Віднімання грошей:");
+        System.out.println(obj.sub(obj1));
+        
+        System.out.println("Ділення грошей:");
+        System.out.println(obj.div(obj1));
+        
+        System.out.println("Ділення на число:");
+        System.out.println(obj.divn(13));
+        
+        obj.comp(obj1);
+        obj1.comp(obj);
+        
+        System.out.println(obj.equals(obj2));
 
     }
 
